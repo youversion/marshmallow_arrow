@@ -1,3 +1,5 @@
+"""Provides Arrow field for Marshmallow."""
+
 import arrow
 from marshmallow import fields
 
@@ -21,7 +23,7 @@ class ArrowField(fields.Field):
 
         return value.isoformat()
 
-    def _deserialize(self, value, attr, obj):
+    def _deserialize(self, value, attr, data):
         if not value:
             raise self.fail('invalid_object')
 

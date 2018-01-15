@@ -7,6 +7,10 @@ name = "pypi"
 
 [packages]
 
+pycodestyle = "*"
+"flake8" = "*"
+isort = "*"
+pylint = "*"
 
 
 [dev-packages]

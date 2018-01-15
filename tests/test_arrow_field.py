@@ -1,5 +1,6 @@
 import arrow
 from marshmallow import Schema, fields
+
 from marshmallow_arrow import ArrowField
 
 
@@ -19,7 +20,6 @@ def test_deserialization():
     birthday = arrow.utcnow().isoformat()
     schema = CalendarEventSchema()
     data, errors = schema.load({'name': 'Birthday Party', 'start_datetime': birthday})
-    print(data)
     assert errors == {}
     assert isinstance(data['start_datetime'], arrow.Arrow)
     assert data['start_datetime'].isoformat() == birthday
@@ -53,7 +53,6 @@ def test_serialization():
     birthday_event = CalendarEvent('Birthday Party', birthday)
     schema = CalendarEventSchema()
     result = schema.dump(birthday_event)
-    print(result.data)
     assert result.data['start_datetime'] == birthday.isoformat()
 
 
