@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='Marshmallow-Arrow',
-    version='1.0',
+    version='1.0.1',
     url='https://github.com/youversion/marshmallow_arrow',
     download_url='https://github.com/youversion/marshmallow_arrow/archive/master.zip',
     license='MIT',
