@@ -17,13 +17,13 @@ class ArrowField(fields.Field):
         'invalid_datetime': 'Unable to parse datetime.',
     }
 
-    def _serialize(self, value, attr, obj):
+    def _serialize(self, value, attr, obj, **_):
         if value is None:
             return None
 
         return value.isoformat()
 
-    def _deserialize(self, value, attr, data):
+    def _deserialize(self, value, attr, data, **_):
         if not value:
             raise self.fail('invalid_object')
 
